@@ -1,0 +1,202 @@
+
+    
+    /* Reset and General Styling */
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        background: #000;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .container > div {
+        flex-basis: calc(33.33% - 20px);
+        margin-bottom: 40px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.15); /* Transparent white background for glass effect */
+        border-radius: 8px;
+        backdrop-filter: blur(10px); /* Apply blur effect */
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Soft shadow */
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .container > div:hover {
+        transform: translateY(-5px);
+    }
+    
+    iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+        border-radius: 8px;
+        backdrop-filter: blur(5px); /* Apply blur effect to iframe */
+    }
+    
+    /* Headings */
+    h1, h2, h3 {
+        margin: 0 0 20px;
+        text-align: center;
+    }
+    
+    h2
+    {
+        color: #fff;
+    }
+    
+    h1 {
+        font-size: 42px;
+        font-weight: bold;
+        color: #007bff;
+    }
+    
+    h2 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+    
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    /* Paragraphs */
+    p {
+        margin: 0 0 20px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    
+    /* Section Styling */
+    .first, .sec, .third, .fourth, .fifth, .sixth, .seventh, .eight {
+        padding: 20px;
+        color: #fff;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.15); /* Transparent white background for glass effect */
+        backdrop-filter: blur(10px); /* Apply blur effect */
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Soft shadow */
+    }
+    
+    /* Odd Sections */
+    .first:nth-child(odd), .sec:nth-child(odd), .third:nth-child(odd), .fourth:nth-child(odd), .fifth:nth-child(odd), .sixth:nth-child(odd), .seventh:nth-child(odd), .eight:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.25); /* Adjust transparency for odd sections */
+    }
+    
+    /* Button */
+    .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #007bff;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    
+    /* Decorative Elements */
+    hr {
+        border: none;
+        border-top: 2px solid #ccc;
+        margin: 20px 0;
+    }
+    
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #007bff;
+        color: #ffffff;
+        font-size: 16px;
+    }
+    
+    .footer a {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+    
+    .footer a:hover {
+        text-decoration: none;
+    }
+    
+    .abc
+    {
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+    }
+    
+    .abc .color
+    {
+        position: absolute;
+        filter: blur(200px);
+    }
+    
+    .abc .color:nth-child(1)
+    {
+        top: 150px;
+        width: 500px;
+        height: 500px;
+        background: #ff359b;
+    }
+    
+    .abc .color:nth-child(2)
+    {
+        top: 1850px;
+        left: 100px;
+        width: 600px;
+        height: 600px;
+        background: #fffd87;
+    }
+    
+    .abc .color:nth-child(3)
+    {
+        top: 910px;
+        right: 100px;
+        width: 500px;
+        height: 500px;
+        background: #00d2ff;
+    }
+    
+    .abc .color:nth-child(4)
+    {
+        top: 2910px;
+        right: 100px;
+        width: 500px;
+        height: 500px;
+        background: #00ff55;
+    }
+    
+    .abc .color:nth-child(5)
+    {
+        top: 3750px;
+        left: 100px;
+        width: 600px;
+        height: 600px;
+        background: #ff7700;
+    }
+    
+    .abc .color:nth-child(6)
+    {
+        top: 4910px;
+        right: 100px;
+        width: 500px;
+        height: 500px;
+        background: #5500ff;
+    }

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase</title>
+    <link rel="stylesheet" href="css/travel_ease.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <div id="google_translate_element"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage:'en'},'google_translate_element');
+              }
+    </script>
+
+        <nav class="navbar">
+            <!-- <div id="google_translate_element"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage:'en'},'google_translate_element');
+              }
+    </script> -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+            <ul class="links-container">
+
+                <li class="link-item"><a href="#travel">Home</a></li>
+                <li class="link-item"><a href="http://127.0.0.1:5500/buddy_finder.html">Get Buddy</a></li>
+                <li class="link-item"><a href="#tours-container">Explore</a></li>
+                <li class="link-item"><a href="http://127.0.0.1:5500/map1.html"><img src="loca.jpeg" class="logo" alt=""></a></li>
+                <li class="link-item"><a href="#services">Services</a></li>
+                <li class="link-item"><a href="hotel-booking.html">BOOK NOW</a></li>
+                <li class="link-item"><a href="#weather"><img src="weather_logo.jpeg" class="logo" alt=""></a></li>
+                
+            </ul>
+            
+        </nav>
+    </header>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">TRAVEL EASE</h1>
+
+            <!-- <a href="#" style="--clr:#1e9bff"><span>Explore</span><i></i></a> -->
+            <!-- <p class="hero-section-sub-heading">Explore More</p> -->
+        </div>
+    
+        <!-- scroll down img -->
+        
+    </main>
+    <div class="background">
+        <img src="images/hero.jpg" class="background-image" alt="hero-section image">
+    
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+    
+    </div>
+
+    <!-- google translator -->
+    
+    <!-- <div id="google_translate_element"></div>
+<script>
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage:'en'},
+            'google_translate_element');
+          }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+
+</script> -->
+
+
+<!-- explore section -->
+
+    <section class="explore-section" id="explore-section">
+        <h1 class="section-title" data-aos="fade-up"></h1>
+        <p class="section-para" data-aos="fade-up">Say goodbye to solo adventures! Connect with like-minded travelers in real-time based 
+            on your destination, travel dates, and interests. Find the perfect travel companion to share experiences and 
+            navigate unfamiliar territory together.</p>
+    
+            <!-- weather -->
+            <div class="mainContainer" id="weather">
+                <div class="searchInput">
+                    <input type="text" placeholder="Enter City Name" id="searchInput" />
+                    <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="weatherDetails">
+                    <div class="weatherIcon">
+                        <img src="images/sun.jpg" alt="Clouds" id="weatherIcon">
+                    </div>
+                    <div class="cityDetails">
+                        <div class="weather" id="weather"></div>
+                        <div class="desc"></div>
+                    </div>
+                    <div class="windDetails">
+                        <div class="humidityBox">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgr7XehXJkOPXbZr8xL42sZEFYlS-1fQcvUMsS2HrrV8pcj3GDFaYmYmeb3vXfMrjGXpViEDVfvLcqI7pJ03pKb_9ldQm-Cj9SlGW2Op8rxArgIhlD6oSLGQQKH9IqH1urPpQ4EAMCs3KOwbzLu57FDKv01PioBJBdR6pqlaxZTJr3HwxOUlFhC9EFyw/s320/thermometer.png" alt="Humidity">
+                            <div><p class="humidity"></p><span>Humidity</span></div>
+                        </div>
+                        <div class="windSpeed">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyaIguDPkbBMnUDQkGp3wLRj_kvd_GIQ4RHQar7a32mUGtwg3wHLIe0ejKqryX8dnJu-gqU6CBnDo47O7BlzCMCwRbB7u0Pj0CbtGwtyhd8Y8cgEMaSuZKrw5-62etXwo7UoY509umLmndsRmEqqO0FKocqTqjzHvJFC2AEEYjUax9tc1JMWxIWAQR4g/s320/wind.png">
+                            <div><p id="windSpeed"></p><span>Wind Speed</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           
+        
+
+            <!-- javascript for weather -->
+<script>const searchInput = document.querySelector("#searchInput")
+    searchButton = document.querySelector("#searchButton")
+    weatherIcon = document.querySelector("#weatherIcon")
+    windSpeed = document.querySelector("#windSpeed")
+    humidity = document.querySelector(".humidity")
+    weather = document.querySelector(".weather")
+    desc = document.querySelector(".desc")
+    API = "8cf5ac5621c8d0266298a149e49d7514";
+    // --------------------- Created By InCoder ---------------------
+    const setWeatherDetails = (data) => {
+        // console.log(data);
+        desc.innerHTML = data.weather[0].description;
+        weather.innerHTML = Math.round(data.main.temp - 273.15) + "°c";
+        humidity.innerHTML = data.main.humidity + "%";
+        windSpeed.innerHTML = data.wind.speed + "km/h";
+        switch (data.weather[0].main) {
+            case 'Clouds':
+                weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwFTkt5z_dxU6w1UnS1PxiZV3HDiPGsAW5Lrsp09MnlCmkQre9GzO8MnGytaaY1eZoqBN6SMJ4U578_uDtiuXswovr1T3o-Kt5KK0mlN_zC0RDodJFaKHQ3Uk-HIZ3vuMvAKNJi8DDFwWA7F6BOxz78Oh-UePwJTuc3PG0ZIZypPE1xlMPl5z46joaEw/s320/Clouds.png";
+                break;
+            case 'Clear':
+                weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7pmzNCftryAfpa1YBSzVeYtjgxDQnw09Ug0HVV47J8GEtHPYTH9hJgZ2M1k0YgE0pcZ1qekr4C14zyPCiVuQAfXLClK8Ww3hYB6v77yElP7Lo5BnUKo4n-w6yB17FAbw51WST6YKS0GMwyA4fYNxOZxEyNL6HhUfFRgVhOW0GyRdBRriMHFQ-qfh4cA/s320/sun.png";
+                break;
+            case 'Rain':
+                weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDW_NdwvxV796rkFf43qmUDiTQePn5dg7PDfn1SijfpjtB0AWJMBcifU6LWyW7iOtjZhfqIJnKEGQ1PwbbXS7NoKMSAmvy7i2ljWXMYLue3EBIBBR2qTFbs6QCe5eoFr2CU9WzCVJ8u0J3z3eAo3Ajv1LXamZASFtbj9sA_gD-Kp3hfgAk17Xh17RoLQ/s320/rainy.png";
+                break;
+            case 'Mist':
+                weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVpL23l0t1U_ibWi01TFcHMF6J_t-9Ada5PavGlwG4M_mKIcx0pV1md9SN9ip1d84NaVowml5Do16XO3nsuttnM2-Ov05d-wCjEYjdzaOYfKvijw8k6Hfj9pOiPyEZTp2W20EPbTeONTgJE2Rdxs4KZUfg6f2PmbMF1094NcqJ7DwSFUQwYiRmVCNvuA/s320/mist.png";
+                break;
+            case 'Snow':
+                weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-P3iT_uQK95qFY4h7QGdEtbRc1aVQo9BZy0ZWyPBvCNrP-4wnRStw0xYj9e4xa4ZlYISeNZqVJ33UP4YukR4jBennDD_obIN4QxYNZHdzG_z6_MNL2U08wMXwdFhtfvitW5LGiHgrwMJFC8QJFqbSO3woGSBqOdagGxaEQ20_S31Gc-GYL4vYzPzaPw/s320/snow.png";
+                break;
+            case 'Haze':
+                weatherIcon.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjld66Ia5g_hpBn3Impi3zzOBHqWkjQInGLxTb2uXksuCsrkQU8HjlVyLobEJEGg8fRSIxeFzldGEHUmWcaiZBwAcRy4dGDpFX1BjTSB56qmBjW5tEW3RSC9_mCuLU_a8RuXchxGY7Oc8HLLl-IfaDW19Z0ZJJfNae9tECXRIyEu7rmJ3da08z8cI-phw/s320/haze.png";
+                break;
+        }
+    }
+    
+    const callAPI = (id) => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${id}`)
+            .then(response => {
+                // indicates whether the response is successful (status code 200-299) or not
+                if (!response.ok) {
+                    alert("Check spelling of City and try again or Something Went Wrong!");
+                    throw new Error(`Request failed with status ${response.status}`)
+                }
+                return response.json()
+            })
+            .then(data => {
+                setWeatherDetails(data);
+            })
+            .catch(error => console.log(error))
+    }
+    
+    searchButton.addEventListener("click", (e) => {
+        if (searchInput.value == "") {
+            // alert("Please Enter City Name.");
+        } else {
+            callAPI(API);
+        }
+    })
+    
+    searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            searchButton.click();
+        }
+    })
+    
+    searchButton.click();</script>
+
+
+<!-- login form -->
+
+<form class="form" action="hello.html" method="post">
+    <h1>LOGIN</h1>
+    <input type="text" name="" placeholder="Username/abc@email.com">
+    <input type="password" name="" placeholder="Password">
+    <!-- <a href="http://127.0.0.1:5500/form.html"  class="submit">Submit</a>
+    <a href="http://127.0.0.1:5500/form.html"  type="">Submit</a> -->
+    <a href="http://127.0.0.1:5500/form.html" class="submitting">Submit</a>
+    
+    <!-- <a href="http://127.0.0.1:5500/form.html" input type="submit" name="" value="Submit">SUBMIT</a>  -->
+    <h3>Not registered?<a href="http://127.0.0.1:5500/form.html">Create an account</a></h3>
+</form>
+
+
+        <!-- grid -->
+    
+        <div class="tours-container" id="tours-container">
+            <!-- <h1 class="tour-heading" >OUR BEST TOURIST PLACES</h1> -->
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/RAMAMNDIR.jpeg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">RAM MANDIR</h3>
+                    <p class="tour-action"><a href="" >VIEW CITY</a></p>
+                </div>
+            </div>
+    
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/KARNATAKA.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">KARNATAKA</h3>
+                    <p class="tour-action"><A HREF="https://www.makemytrip.com/holidays-india/karnataka-travel-packages.html">VIEW CITY</A></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/RAJASTHAN.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">RAJASTHAN</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/rajasthan-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/MADHYA-PRADESH.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">MADHYAPRADESH</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/madhyapradesh-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/NORTH-EAST.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">NORTH-EAST</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/northeast-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/GOA.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">LAKSHADWEEP</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/lakshadweep-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/SIKKIM.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">SIKKIM</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/sikkim-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/MUMBAI.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">MAHARASHTRA</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/maharashtra-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/GOA.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">GOA</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/goa-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/image17.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">ASSAM</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/assam-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+    
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/image11.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">AMRITSAR</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/amritsar-travel-packages.html" >VIEW CITY</a></p>
+                </div>
+            </div>
+    
+            <div class="tour-card" data-aos="fade-up">
+                <!-- <a href="https://www.makemytrip.com/holidays-india/kerala-travel-packages.html" ></a> -->
+                <img src="images/KERALA.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">KERALA</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/kerala-travel-packages.html">View city</a></p>
+                </div>
+            </div>
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/image1.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">JAMMU</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/jammu-travel-packages.html">VIEW CITY</a></p>
+                </div>
+            </div>
+    
+            <div class="tour-card" data-aos="fade-up">
+                <img src="images/SPITI.jpg" class="tour-img" alt="tour-image">
+                <div class="tour-body">
+                    <h3 class="tour-name">SPITI</h3>
+                    <p class="tour-action"><a href="https://www.makemytrip.com/holidays-india/spiti-travel-packages.html">VIEW CITY</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-section" id="services">
+        <h1 class="section-title" data-aos="fade-up">Why Us ?</h1>
+        <p class="section-para" data-aos="fade-up">Travel-Ease empowers you to explore the world seamlessly.
+             Find real-time travel buddies with similar interests, translate languages on the go, and discover hidden gems with interactive maps.
+              Book hotels securely, and read honest reviews to make informed decisions.
+             It's your one-stop shop for a connected, personalized, and unforgettable travel experience.</p>
+    
+        <!-- services grid -->
+        <div class="serives-grid">
+            <div class="service-card" data-aos="fade-up">
+                <div class="circle"></div>
+                <i class="fa-solid fa-earth-americas card-icon"></i>
+                <p class="service-text">We are based all over the world</p>
+            </div>
+            <div class="service-card" data-aos="fade-up">
+                <div class="circle"></div>
+                <i class="fa-solid fa-coins card-icon"></i>
+                <p class="service-text">Travel the World,Without thinking</p>
+            </div>
+            <div class="service-card" data-aos="fade-up">
+                <div class="circle"></div>
+                <i class="fa-solid fa-book-open card-icon"></i>
+                <p class="service-text">Get to know about local cultures</p>
+            </div>
+            <div class="service-card" data-aos="fade-up">
+                <div class="circle"></div>
+                <i class="fa-solid fa-person-snowboarding card-icon"></i>
+                <p class="service-text">Have you best experience</p>
+            </div>
+        </div>
+    
+        <div class="bg-circle"></div>
+       <div class="best-places">POPULAR TOURIST DESTINATIONS</div>
+    
+        <div class="travel-grid" id="travel">
+            <img src="images/image1.jpg" data-aos="fade-up" alt="">
+            <img src="images/image2.jpg" data-aos="fade-up" alt="">
+            <img src="images/image14.jpg" data-aos="fade-up" alt="">
+            <img src="images/image15.jpg" data-aos="fade-up" alt="">
+            <img src="images/image16.jpg" data-aos="fade-up" alt="">
+            <img src="images/image17.jpg" data-aos="fade-up" alt="">
+            <img src="images/image3.jpg"data-aos="fade-up" alt="">
+            <img src="images/image4.jpg" data-aos="fade-up" alt="">
+            <img src="images/image5.jpg" data-aos="fade-up" alt="">
+            <img src="images/image6.jpg" data-aos="fade-up" alt="">
+            <img src="images/image7.jpg" data-aos="fade-up" alt="">
+            <img src="images/image8.jpg" data-aos="fade-up" alt="">
+            <img src="images/image9.jpg" data-aos="fade-up" alt="">
+            <img src="images/image10.jpg" data-aos="fade-up" alt="">
+            <img src="images/image11.jpg" data-aos="fade-up" alt="">
+            <img src="images/image12.jpg" data-aos="fade-up" alt="">
+            <img src="images/image13.jpg" data-aos="fade-up" alt="">
+            <img src="images/image5.jpg" data-aos="fade-up" alt="">
+        </div>
+    
+    </section>
+
+    <section class="book-section" id="booknow">
+        <div class="book-content" data-aos="fade-up">
+            <h1 class="book-now-title">Book your travel today</h1>
+            <p class="book-now-text">Give yourself and your family a peacfull and wonderful vacation this holiday</p>
+    
+            <button class="book-now">book now</button>
+        </div>
+        <div class="bg-circle-2"></div>
+        <img src="" data-aos="fade-up" class="book-now-img" alt="">
+    </section>
+    
+
+    <!-- testimonials -->
+    <div class="testimonial-container">
+        <img1 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="user-image">
+        <p class="text">"Thank you so much for your help. Travel Ease is highly adaptable and very helpful. Great job, I will definitely be coming again!"</p>
+        <h4 class="username">-PRATHAM</h4>
+    </div>
+
+    <script>const testimonials = [
+        {
+            name: "G.KAVYA",
+            photoUrl:
+            
+            // "https://th.bing.com/th/id/R.7cde9e180c9f6033600de228f27fc684?rik=1r%2fwHf5hcXDdQQ&riu=http%3a%2f%2fclipartmag.com%2fimages%2flocation-icon-png-23.png&ehk=6f3Me%2fzYpj1%2bdJOq8Aa1rClCQR0DK9ga47Q7xXDZVV8%3d&risl=&pid=ImgRaw&r=0",
+            //     // "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
+            "https://static.vecteezy.com/system/resources/previews/000/583/611/original/location-icon-vector.jpg",
+            text: "Overall trip was good. Everything is as planned as per the itinerary. Driver and cab is excellent. We didn't face any problems",
+        },
+        {
+            name: "PRATHAM",
+            photoUrl:
+                // "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
+               "https://static.vecteezy.com/system/resources/previews/000/583/611/original/location-icon-vector.jpg",
+            text: "My parents enjoyed the trip thoroughly . Everything was well organised and arrangements were also good .",
+        },
+        {
+            name: "CHINMOYEE",
+            photoUrl:
+                // "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
+                "https://static.vecteezy.com/system/resources/previews/000/583/611/original/location-icon-vector.jpg",
+            text: "It was really good and memorable trip for us..Thank you team for providing all facilities and covering all places mentioned in the package.",
+        },
+        {
+            name: "DEHIKA",
+            photoUrl:
+                // "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
+                "https://static.vecteezy.com/system/resources/previews/000/583/611/original/location-icon-vector.jpg",
+            text: "It was really good and memorable trip for us..Thank you team for providing all facilities and covering all places mentioned in the package.",
+        },
+    ];
+    
+    const imgEl = document.querySelector("img");
+    const textEl = document.querySelector(".text");
+    const usernameEl = document.querySelector(".username");
+    
+    let idx = 0;
+    
+    updateTestimonial();
+    
+    function updateTestimonial() {
+        const { name, photoUrl, text } = testimonials[idx];
+        imgEl.src = photoUrl;
+        textEl.innerText = text;
+        usernameEl.innerText = name;
+        idx++;
+        if (idx === testimonials.length) {
+            idx = 0;
+        }
+        setTimeout(() => {
+            updateTestimonial();
+        }, 2000);
+    }</script>
+
+    <!-- star rating -->
+    <div class="star-rating">
+        <div class="post">
+          <div class="text">Thanks for rating us!</div>
+          <div class="edit">EDIT</div>
+        </div>
+        <div class="star-widget">
+          <input type="radio" name="rate" id="rate-5">
+          <label for="rate-5" class="fas fa-star"></label>
+          <input type="radio" name="rate" id="rate-4">
+          <label for="rate-4" class="fas fa-star"></label>
+          <input type="radio" name="rate" id="rate-3">
+          <label for="rate-3" class="fas fa-star"></label>
+          <input type="radio" name="rate" id="rate-2">
+          <label for="rate-2" class="fas fa-star"></label>
+          <input type="radio" name="rate" id="rate-1">
+          <label for="rate-1" class="fas fa-star"></label>
+          <form action="#">
+            <div class="textarea">
+              <textarea cols="30" placeholder="Describe your experience.."></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Post</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <script>
+        const btn = document.querySelector("button");
+        const post = document.querySelector(".post");
+        const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+      btn.onclick = ()=>{
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = ()=>{
+          widget.style.display = "block";
+          post.style.display = "none";
+        }
+        return false;
+      }
+    </script>
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <img src="images/image13.jpg" class="footer-logo" alt="">
+        <div class="footer-text">
+            <p>Travel the world, on this holiday😁👍</p>
+            <p>Email - travelease@gmail.com</p>
+            <p>Phone - 9988776655,9988776644</p>
+        </div>
+        <p class="copyright-line">TRAVEL EASE - The one and only solution!!</p>
+    </footer>
+
+    <script text="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
